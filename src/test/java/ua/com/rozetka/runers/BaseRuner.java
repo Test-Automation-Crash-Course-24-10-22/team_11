@@ -20,7 +20,15 @@ public class BaseRuner {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://rozetka.com.ua/ua/");
     }
+    public void sleep(int seconds){
 
+
+        try {
+            Thread.sleep(seconds*1000L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
     @AfterSuite
     public void afterSuite(){
         if (driver != null) {

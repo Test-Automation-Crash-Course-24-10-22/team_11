@@ -18,4 +18,18 @@ public class OPTest extends BaseRuner {
                 .unssussfulLogin1();
 
     }
+    @Test
+    public void LoginTest2(){
+        new HomePage(driver)
+                .getHeaderComponent()
+                .clickUserIcon()
+                .successfullLogin("pass1@gmail.com", "123asdF");
+    }
+    @Test
+    public void LoginTest3(){
+        new HomePage(driver)
+                .getHeaderComponent()
+                .clickUserIcon()
+                .unsuccessfullLogin2();
+    }
 }
