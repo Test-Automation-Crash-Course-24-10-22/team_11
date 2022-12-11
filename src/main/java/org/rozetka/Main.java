@@ -1,4 +1,4 @@
- package org.example;
+ package org.rozetka;
 
 public class  Main {
 
