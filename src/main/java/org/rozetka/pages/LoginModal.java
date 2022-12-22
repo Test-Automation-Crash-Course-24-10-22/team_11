@@ -62,8 +62,8 @@ protected WebElement errorMessangePassword;
         System.out.println("Message: " + getErrorMessange().getText());
     }
     public HomePage successfullLogin(String email, String password){
-        getEmailInput().sendKeys("pass1@gmail.com");
-        getPasswordInput().sendKeys("123asdF");
+        getEmailInput().sendKeys(email);
+        getPasswordInput().sendKeys(password);
         getLoginButton().click();
         sleep(5);
         getCaptchar().click();
