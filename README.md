@@ -25,10 +25,6 @@ Executing the Tests:
 2.Clone the repository:
 git clone https://github.com/Test-Automation-Crash-Course-24-10-22/team_11.git
 
-3.Run the test with command :
+3.Run the test with command : mvn clean test
 
-4.mvn clean test
-
-5.Generate the report with command:
-
-6.allure serve 
+4.Generate the report with command:  allure serve 
