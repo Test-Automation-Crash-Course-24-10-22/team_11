@@ -12,6 +12,9 @@ Automated tests:
 
 Verify the user can not login when the text field "Email" is empty.
 
+Verify the user can not login with an invalid password.
+
+
 Executing the Tests:
 
 Select branch master
