@@ -19,13 +19,13 @@ public class SeleniumDemo extends BaseRuner {
     @Test
     public void firstUnsuccessfulTest1() {
 
-        WebElement userIcon = driver.findElement(By.xpath("/html/body/app-root/div/div/rz-header/rz-main-header/header/div/div/ul/li[3]/rz-user/button"));
+        WebElement userIcon = driver.findElement(By.xpath("//div/div/ul/li[3]/rz-user/button"));
         userIcon.click();
         WebElement password = driver.findElement(By.xpath("//*[@id=\"auth_pass\"]"));
         password.sendKeys("pass");
-        WebElement loginBtn = driver.findElement(By.xpath("/html/body/app-root/rz-single-modal-window/div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[5]/button[1]"));
+        WebElement loginBtn = driver.findElement(By.xpath("//div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[5]/button[1]"));
         loginBtn.click();
-        WebElement errorMes = driver.findElement(By.xpath("/html/body/app-root/rz-single-modal-window/div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[1]/p"));
+        WebElement errorMes = driver.findElement(By.xpath("//div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[1]/p"));
         //String expected  = " Введено невірну адресу ел. пошти або номер телефону ";
         Assert.assertTrue(errorMes.getText().contains("Введено невірну адресу ел. пошти або номер телефону"));
         //System.out.println("Message: " + errorMes.getText());
@@ -52,12 +52,12 @@ sleep(10);
 //listOrdering.click();
 //WebElement nameEmail = driver.findElement(By.xpath("//div/div/rz-main-page/div/aside/rz-main-page-sidebar/div[2]/ul/li[1]/a/div[2]/p"));
 //Assert.assertTrue(nameEmail.getText().contains("pass1@gmail.com"));
-Assert.assertTrue(listOrdering.isDisplayed());
+//Assert.assertTrue(listOrdering.isDisplayed());
 
     }
 
 @Test
-    public void firstUnsuccessfulTest2(){
+    public void firstUnsuccessfulTest2() {
     WebElement userIcon = driver.findElement(By.xpath("//div/div/rz-header/rz-main-header/header/div/div/ul/li[3]/rz-user/button"));
     userIcon.click();
     WebElement emailField = driver.findElement(By.xpath("//*[@id=\"auth_email\"]"));
@@ -73,9 +73,17 @@ Assert.assertTrue(listOrdering.isDisplayed());
     loginBtn.click();
     sleep(10);
     WebElement errorrMessange = driver.findElement(By.xpath("//div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[2]/div[2]/strong"));
-  String expected  = "Введено невірний пароль!";
-Assert.assertTrue(errorrMessange.getText().contains(expected));
+    String expected = "Введено невірний пароль!";
+    Assert.assertTrue(errorrMessange.getText().contains(expected));
     //System.out.println("Message: " + erorrMeassengePassw.getText());
-
 }
+@Test
+    public void  RememberPassword(){
+    WebElement userIcon = driver.findElement(By.xpath("//div/div/rz-header/rz-main-header/header/div/div/ul/li[3]/rz-user/button"));
+    userIcon.click();
+    WebElement checkBox = driver.findElement(By.xpath("/html/body/app-root/rz-single-modal-window/div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[3]/label"));
+    checkBox.click();
+}
+
+
 }

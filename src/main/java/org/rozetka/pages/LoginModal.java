@@ -1,5 +1,6 @@
 package org.rozetka.pages;
-
+import org.rozetka.pages.BasePage;
+import org.rozetka.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.rozetka.locators.HeadersLocators;
@@ -8,10 +9,8 @@ import org.rozetka.locators.LoginLocators;
 public class LoginModal extends BasePage {
     protected WebElement passwordInput;
     protected WebElement loginButton;
-    protected WebElement errorMessange;
     protected WebElement emailInput;
     protected WebElement captchar;
-protected WebElement errorMessangePassword;
     public LoginModal(WebDriver driver) {
         super(driver);
     }
@@ -42,25 +41,11 @@ protected WebElement errorMessangePassword;
         return captchar;
     }
 
-
-    public WebElement getErrorMessange() {
-        if (errorMessange == null) {
-            errorMessange = driver.findElement(LoginLocators.ERROR_MESSANGE.getPath());
-        }
-        return errorMessange;
-    }
-    public WebElement getErrorMesPassword(){
-        if(errorMessangePassword == null ){
-            errorMessangePassword = driver.findElement(LoginLocators.EROOR_MESSANGEPASSWORD.getPath());
-        }
-        return errorMessangePassword;
-    }
-
-    public void  unssussfulLogin1() {
+    public void  emptyEmailField() {
         getPasswordInput().sendKeys("pass");
         getLoginButton().click();
-        System.out.println("Message: " + getErrorMessange().getText());
     }
+
     public HomePage successfullLogin(String email, String password){
         getEmailInput().sendKeys(email);
         getPasswordInput().sendKeys(password);
@@ -71,7 +56,7 @@ protected WebElement errorMessangePassword;
         sleep(10);
         return new HomePage(driver);
     }
-    public void unsuccessfullLogin2(){
+    public void invalidPassword(){
         getEmailInput().sendKeys("pass1@gmail.com");
         getPasswordInput().sendKeys("fgh");
         getLoginButton().click();
@@ -79,6 +64,14 @@ protected WebElement errorMessangePassword;
         getCaptchar().click();
         sleep(5);
         getLoginButton().click();
-        System.out.println("Message: " + getErrorMesPassword().getText());
+    }
+    public void invalidEmail(){
+        getEmailInput().sendKeys("pass1@gmail.com");
+        getLoginButton().click();
+        sleep(5);
+
     }
 }
+
+
+

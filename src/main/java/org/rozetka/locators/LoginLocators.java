@@ -11,11 +11,6 @@ public enum LoginLocators {
     EROOR_MESSANGEPASSWORD(By.xpath("/html/body/app-root/rz-single-modal-window/div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[2]/div[2]/strong"));
 
 
-
-
-
-
-
     private final By path;
 
     LoginLocators(By path) {

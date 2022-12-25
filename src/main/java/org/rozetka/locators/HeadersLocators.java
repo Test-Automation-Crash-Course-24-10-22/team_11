@@ -2,8 +2,9 @@ package org.rozetka.locators;
 import org.openqa.selenium.By;
 
 public enum HeadersLocators {
-    USER_ICON(By.xpath("/html/body/app-root/div/div/rz-header/rz-main-header/header/div/div/ul/li[3]/rz-user/button"));
-    ;
+    USER_ICON(By.xpath("//div/div/ul/li[3]/rz-user/button")),
+
+    SEARCH_INPUT(By.xpath("//div/div/div/form/div/div/input"));
     private final By path;
 
     HeadersLocators(By path){
