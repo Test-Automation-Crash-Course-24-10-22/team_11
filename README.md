@@ -14,6 +14,9 @@ Verify the user can not login when the text field "Email" is empty.
 
 Verify the user can not login with an invalid password.
 
+Verify the opportunity to log in with a valid email and password.
+
+
 
 Executing the Tests:
 
