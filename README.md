@@ -10,6 +10,7 @@ The target website is https://rozetka.com.ua/ua/
 
 Automated tests:
 
+Verify the user can not login when the text field "Email" is empty.
 
 Executing the Tests:
 
