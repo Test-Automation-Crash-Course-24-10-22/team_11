@@ -16,6 +16,8 @@ Verify the user can not login with an invalid password.
 
 Verify the opportunity to log in with a valid email and password.
 
+Verify the opportunity to select the checkbox [Remember Password].
+
 
 
 Executing the Tests:
