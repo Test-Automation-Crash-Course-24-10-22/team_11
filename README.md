@@ -18,7 +18,7 @@ Verify the opportunity to log in with a valid email and password.
 
 Verify the opportunity to select the checkbox [Remember Password].
 
-"Verify the user can call the sighup popup window with the button [Signup]
+Verify the user can call the sighup popup window with the button [Signup]
 
 
 Executing the Tests:
