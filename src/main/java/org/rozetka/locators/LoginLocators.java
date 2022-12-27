@@ -8,7 +8,9 @@ public enum LoginLocators {
     ERROR_MESSANGE(By.xpath("/html/body/app-root/rz-single-modal-window/div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[1]/p")),
     EMAIL_FIELD(By.xpath("//*[@id=\"auth_email\"]")),
     CAPTCHAR_CHECKBOX(By.id("ngrecaptcha-0")),
-    EROOR_MESSANGEPASSWORD(By.xpath("/html/body/app-root/rz-single-modal-window/div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[2]/div[2]/strong"));
+    EROOR_MESSANGEPASSWORD(By.xpath("/html/body/app-root/rz-single-modal-window/div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[2]/div[2]/strong")),
+    CHECK_BOX(By.xpath("//div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[3]/label")),
+    SIGN_UP(By.xpath("/html/body/app-root/rz-single-modal-window/div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[5]/button[2]"));
 
 
     private final By path;

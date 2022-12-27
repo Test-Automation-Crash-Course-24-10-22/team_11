@@ -1,10 +1,16 @@
 package ua.com.rozetka;
 import io.qameta.allure.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.rozetka.locators.LoginLocators;
+import org.rozetka.locators.SignUPLocators;
 import org.rozetka.pages.HomePage;
+import org.rozetka.pages.LoginModal;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import ua.com.rozetka.runers.BaseRuner;
+
 
 
 public class OPTest extends BaseRuner {
@@ -16,7 +22,7 @@ public class OPTest extends BaseRuner {
 @Description("Login test with valid password and valid email")
     @Link("https://github.com/Test-Automation-Crash-Course-24-10-22/team_11/issues/2")
     @Issue("2")
-    public void LoginTest1(){
+    public void LoginTestSuccessful(){
         new HomePage(driver)
                 .getHeaderComponent()
                 .clickUserIcon()
@@ -26,7 +32,7 @@ public class OPTest extends BaseRuner {
     @Description("Login test with empty email field")
 @Link("https://github.com/Test-Automation-Crash-Course-24-10-22/team_11/issues/13")
 
-    public void LoginTest2() {
+    public void LoginTestEmptyEmail() {
         new HomePage(driver)
                 .getHeaderComponent()
                 .clickUserIcon()
@@ -38,7 +44,7 @@ public class OPTest extends BaseRuner {
     @Test
 @Description("Login test with invalid password")
     @Link("https://github.com/Test-Automation-Crash-Course-24-10-22/team_11/issues/11")
-    public void LoginTest3(){
+    public void LoginTestInvalidPassword(){
         new HomePage(driver)
                 .getHeaderComponent()
                 .clickUserIcon()
@@ -48,14 +54,28 @@ public class OPTest extends BaseRuner {
        // Assert.assertEquals("Введено невірний пароль!", wrongPasswordMessage);
     }
     @Test
-    public void LoginTest4(){
+    @Description("Verify the opportunity to select checkbox [Remember Password]")
+    public void LoginTestRememberPassword(){
         new HomePage(driver)
                 .getHeaderComponent()
-                .clickUserIcon()
-                .invalidEmail();
-        String wrongEmailMessage = driver.findElement(LoginLocators.ERROR_MESSANGE.getPath()).getText();
-        System.out.println("Message: " + wrongEmailMessage);
-        //Assert.assertEquals(" Введено невірну адресу ел. пошти або номер телефону ", wrongEmailMessage);
-
+        .clickUserIcon()
+        .clickCheckbox();
+        WebElement checkBox = driver.findElement(LoginLocators.CHECK_BOX.getPath());
+        //Assert.assertTrue(checkBox.isSelected());
+        System.out.println("Method - RememberPassword() :"+checkBox.getTagName() + " "  + checkBox.isSelected());
     }
+    @Test
+    @Description("Verify the user can call the sighup popup window with button [Signup]")
+    public void LoginTestSignUp(){
+new HomePage(driver)
+        .getHeaderComponent()
+        .clickUserIcon()
+        .getOpotunitySignUp();
+WebElement sighUp = driver.findElement(SignUPLocators.SIGNUP_HEADER.getPath());
+        Assert.assertTrue(sighUp.isDisplayed());
+    }
+
+
+
+
 }

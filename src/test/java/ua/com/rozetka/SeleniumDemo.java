@@ -10,6 +10,8 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import ua.com.rozetka.runers.BaseRuner;
 
+import java.lang.reflect.Method;
+
 public class SeleniumDemo extends BaseRuner {
     @BeforeTest
     public void BeforeTest() {
@@ -81,8 +83,12 @@ sleep(10);
     public void  RememberPassword(){
     WebElement userIcon = driver.findElement(By.xpath("//div/div/rz-header/rz-main-header/header/div/div/ul/li[3]/rz-user/button"));
     userIcon.click();
-    WebElement checkBox = driver.findElement(By.xpath("/html/body/app-root/rz-single-modal-window/div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[3]/label"));
+    WebElement checkBox = driver.findElement(By.xpath("//div[3]/div[2]/rz-user-identification/rz-auth/div/form/fieldset/div[3]/label"));
     checkBox.click();
+    sleep(5);
+    checkBox.click();
+    //Assert.assertTrue(checkBox.isSelected());
+    System.out.println("Method - RememberPassword() :"+checkBox.getTagName() + " "  + checkBox.isSelected());
 }
 
 

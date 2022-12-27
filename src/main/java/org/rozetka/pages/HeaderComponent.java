@@ -22,12 +22,7 @@ public class HeaderComponent extends BasePage {
         this.getUserIcon().click();
         return new LoginModal(this.driver);
     }
-    public WebElement getSearchInput(){
-        if(searchInput== null){
-            searchInput = driver.findElement(HeadersLocators.SEARCH_INPUT.getPath());
-        }
-        return searchInput;
-    }
+
 
 
 
