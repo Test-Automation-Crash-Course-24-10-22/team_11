@@ -29,6 +29,10 @@ public class BaseRuner {
             throw new RuntimeException(e);
         }
     }
+    public WebDriver getDriver(){
+        return driver;
+    }
+
     @AfterSuite
     public void afterSuite(){
         if (driver != null) {

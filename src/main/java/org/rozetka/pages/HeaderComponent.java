@@ -10,7 +10,6 @@ public class HeaderComponent extends BasePage {
     }
 
     WebElement userIcon;
-    WebElement searchInput;
 
     public WebElement getUserIcon(){
         if (userIcon == null){

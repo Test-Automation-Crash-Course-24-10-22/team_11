@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.rozetka.locators.HeadersLocators;
 import org.rozetka.locators.LoginLocators;
 import org.rozetka.pages.HomePage;
+
 public class LoginModal extends BasePage {
     protected WebElement passwordInput;
     protected WebElement loginButton;
@@ -69,8 +70,9 @@ public class LoginModal extends BasePage {
             getLoginButton().click();
             sleep(5);
             getCaptchar().click();
+            sleep(5);
             getLoginButton().click();
-            sleep(10);
+            sleep(5);
             return  new HomePage(driver);
         }
         public void invalidPassword(){

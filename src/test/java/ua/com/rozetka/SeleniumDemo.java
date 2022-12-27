@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import ua.com.rozetka.runers.BaseRuner;
-
 import java.lang.reflect.Method;
 
 public class SeleniumDemo extends BaseRuner {
